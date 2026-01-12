@@ -177,6 +177,44 @@ poetry run python manage.py rundramatiq
 This will handle asynchronous tasks such as scoring questions, evaluating metrics like "movement", and processing notifications.
 
 
+# Deployment
+
+## Railway Deployment
+
+Metaculus can be easily deployed to [Railway](https://railway.app/), a modern platform-as-a-service. Railway provides:
+
+- **One-click deployment** from your GitHub repository
+- **Automatic SSL certificates** for secure HTTPS connections
+- **Built-in PostgreSQL and Redis** databases
+- **Horizontal and vertical scaling** as your needs grow
+- **Simple environment variable management**
+
+### Quick Deploy to Railway
+
+1. Fork this repository to your GitHub account
+2. Sign up at [Railway](https://railway.app/)
+3. Create a new project from your forked repository
+4. Add PostgreSQL and Redis databases
+5. Configure environment variables
+6. Deploy!
+
+For detailed step-by-step instructions, troubleshooting, and best practices, see our comprehensive [Railway Deployment Guide](docs/railway-deployment.md).
+
+### Railway vs Local Development
+
+Railway is ideal for:
+- Production deployments
+- Staging environments
+- Demo instances
+- Testing at scale
+
+Local development is better for:
+- Active feature development
+- Debugging
+- Quick iterations
+- Learning the codebase
+
+
 # Misc
 Here are some other useful things to know about
 

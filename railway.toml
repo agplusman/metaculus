@@ -1,0 +1,14 @@
+# Railway Configuration for Metaculus
+# This file defines the build and deployment configuration for Railway
+
+[build]
+builder = "dockerfile"
+dockerfilePath = "Dockerfile"
+
+# Web service - serves both Django backend and Next.js frontend
+[deploy]
+startCommand = "sh -c 'scripts/prod/startapp.sh'"
+healthcheckPath = "/api/healthcheck/"
+healthcheckTimeout = 300
+restartPolicyType = "on_failure"
+restartPolicyMaxRetries = 10
