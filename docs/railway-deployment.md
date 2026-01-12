@@ -223,7 +223,7 @@ The web service runs both the Django backend and Next.js frontend behind an Ngin
 - **Build Target**: `web` (from Dockerfile)
 - **Port**: `8080` (Nginx listens on this port)
 - **Start Command**: `sh -c 'scripts/prod/startapp.sh'`
-- **Health Check**: `/api/health/` (optional but recommended)
+- **Health Check**: `/api/healthcheck/`
 - **Resources**: Recommended 2GB RAM minimum, 2 vCPU
 
 ### Dramatiq Worker Service
@@ -308,11 +308,11 @@ Railway supports health checks to ensure your service is running properly:
 1. Go to web service → **"Settings"**
 2. Scroll to **"Health Check"**
 3. Set:
-   - **Path**: `/api/health/`
+   - **Path**: `/api/healthcheck/`
    - **Timeout**: `300` seconds
    - **Interval**: `30` seconds
 
-**Note**: Ensure your Django application has a health check endpoint at `/api/health/`. You may need to add this if it doesn't exist.
+**Note**: The Django application has a health check endpoint at `/api/healthcheck/` (defined in `utils/middlewares.py`).
 
 ## Scaling
 
